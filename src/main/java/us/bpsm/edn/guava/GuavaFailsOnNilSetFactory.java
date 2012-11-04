@@ -1,16 +1,16 @@
 package us.bpsm.edn.guava;
 
-import com.google.common.collect.ImmutableList;
-
 import us.bpsm.edn.parser.CollectionBuilder;
 import us.bpsm.edn.parser.CollectionBuilder.Factory;
 
-class GuavaVectorFactory implements Factory {
+import com.google.common.collect.ImmutableSet;
+
+public class GuavaFailsOnNilSetFactory implements Factory {
 
     @Override
     public CollectionBuilder builder() {
         return new CollectionBuilder() {
-            final ImmutableList.Builder<Object> b = ImmutableList.builder();
+            final ImmutableSet.Builder<Object> b = ImmutableSet.builder();
 
             @Override
             public void add(Object o) {
@@ -23,4 +23,5 @@ class GuavaVectorFactory implements Factory {
             }
         };
     }
+
 }

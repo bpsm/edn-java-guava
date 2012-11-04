@@ -5,7 +5,7 @@ import com.google.common.collect.ImmutableList;
 import us.bpsm.edn.parser.CollectionBuilder;
 import us.bpsm.edn.parser.CollectionBuilder.Factory;
 
-class GuavaListFactory implements Factory {
+public class GuavaSkipsNilListFactory implements Factory {
 
     @Override
     public CollectionBuilder builder() {
@@ -14,7 +14,9 @@ class GuavaListFactory implements Factory {
 
             @Override
             public void add(Object o) {
-                b.add(o);
+                if (o != null) {
+                    b.add(o);
+                }
             }
 
             @Override

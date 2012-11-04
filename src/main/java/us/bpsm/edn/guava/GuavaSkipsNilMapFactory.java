@@ -6,8 +6,10 @@ import us.bpsm.edn.parser.CollectionBuilder.Factory;
 
 import com.google.common.collect.ImmutableMap;
 
-class GuavaMapFactory implements Factory {
+public class GuavaSkipsNilMapFactory implements Factory {
 
+    final static Object SKIP = "nil";
+    
     @Override
     public CollectionBuilder builder() {
         return new CollectionBuilder() {
@@ -16,13 +18,16 @@ class GuavaMapFactory implements Factory {
             
             @Override
             public void add(Object o) {
-                if (o == null) {
-                    throw new NullPointerException();
-                }
                 if (key == null) {
-                    key = o;
+                    if (o == null) {
+                        key = SKIP;
+                    } else {
+                        key = o;
+                    }
                 } else {
-                    b.put(key, o);
+                    if (key != SKIP && o != null) {
+                        b.put(key, o);
+                    }
                     key = null;
                 }
             }

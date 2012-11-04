@@ -16,7 +16,6 @@ import us.bpsm.edn.parser.Parser;
 import us.bpsm.edn.parser.Parsers;
 
 public class UsageTest {
-
     @Test
     public void test() {
         Parser p = Parsers.newParser(EdnJavaGuava.defaultConfiguration());
