@@ -8,7 +8,7 @@ import com.google.common.collect.ImmutableMap;
 
 public class GuavaSkipsNilMapFactory implements Factory {
 
-    final static Object SKIP = "nil";
+    final static Object SKIP = new String("nil");
     
     @Override
     public CollectionBuilder builder() {
