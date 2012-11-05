@@ -13,7 +13,7 @@ import us.bpsm.edn.parser.Parsers;
 import com.google.common.collect.ImmutableList;
 
 public class GuavaSkipsNilVectorFactoryTest {
-    
+
     static Object parse(String ednText) {
         return Parsers.newParser(EdnJavaGuava.defaultConfiguration(SKIPS_NIL))
                 .nextValue(Parsers.newParseable(ednText));

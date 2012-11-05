@@ -13,7 +13,7 @@ public class GuavaFailsOnNilMapFactory implements Factory {
         return new CollectionBuilder() {
             final ImmutableMap.Builder<Object,Object> b = ImmutableMap.builder();
             Object key = null;
-            
+
             @Override
             public void add(Object o) {
                 if (o == null) {

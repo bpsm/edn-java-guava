@@ -33,7 +33,7 @@ public class GuavaSkipsNilMapFactoryTest {
     public void nilKeyResultsInSkippedEntry() {
         assertEquals(ImmutableMap.of(), parse("{nil 1}"));
     }
-    
+
     @Test
     public void nilValueResultsInSkippedEntry() {
         assertEquals(ImmutableMap.of(), parse("{1 nil}"));

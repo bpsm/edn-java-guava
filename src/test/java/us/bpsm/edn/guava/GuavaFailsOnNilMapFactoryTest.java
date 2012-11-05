@@ -33,7 +33,7 @@ public class GuavaFailsOnNilMapFactoryTest {
     public void nilKeyResultsInException() {
         parse("{nil 1}");
     }
-    
+
     @Test(expected=NullPointerException.class)
     public void nilValueResultsInException() {
         parse("{1 nil}");

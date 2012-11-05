@@ -9,13 +9,13 @@ import com.google.common.collect.ImmutableMap;
 public class GuavaSkipsNilMapFactory implements Factory {
 
     final static Object SKIP = new String("nil");
-    
+
     @Override
     public CollectionBuilder builder() {
         return new CollectionBuilder() {
             final ImmutableMap.Builder<Object,Object> b = ImmutableMap.builder();
             Object key = null;
-            
+
             @Override
             public void add(Object o) {
                 if (key == null) {
