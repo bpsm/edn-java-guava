@@ -102,11 +102,11 @@
   </repositories>
   <distributionManagement>
     <repository>
-      <id>release-repo</id>
+      <id>sonatype-nexus-staging</id>
       <url>${release.repo.path}</url>
     </repository>
     <snapshotRepository>
-      <id>snapshot-repo</id>
+      <id>sonatype-nexus-snapshots</id>
       <url>${snapshot.repo.path}</url>
     </snapshotRepository>
   </distributionManagement>
